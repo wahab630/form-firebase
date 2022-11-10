@@ -8,12 +8,8 @@ const Footer = () => {
         <div className="container pt-5">
           <div className="row">
             <div className="col-lg-3 pt-2">
-              {/* <img
-                className="footer-img"
-                src="https://porkswap.finance/assets/images/logo.png"
-                alt=""
-              /> */}
-              <p>Decentralized Spot and Futures Trading on Binance Smart Chain</p>
+              
+              <p>Trading on Binance Smart Chain</p>
             </div>
             <div className="col-lg-4 offset-lg-5 text-center">
               <ul className="list-unstyled d-flex justify-content-center">
@@ -23,7 +19,7 @@ const Footer = () => {
                 <li className="me-2">  <FaYoutube size={30}/> </li>
                 <li className="me-2">  <FaTelegram size={30}/> </li>
               </ul>
-              <p>exchange@porkswap.finance</p>
+              
             </div>
             
            
@@ -35,7 +31,7 @@ const Footer = () => {
           </div>
           <div className="row">
           <div className="col-lg-12">
-             <p className="text-center">Copyright © 2022 PorkSwap.finance</p>
+             <p className="text-center">Copyright © 2022 </p>
             </div>
           </div>
         </div>

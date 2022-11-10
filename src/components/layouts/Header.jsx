@@ -24,13 +24,13 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link to="/" className="nav-link ">
-                  Features
+                <Link to="/login" className="nav-link ">
+                  Login page
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="" className="nav-link ">
-                  Litepaper
+                <Link to="/register" className="nav-link ">
+                  Register
                 </Link>
               </li>
               <li className="nav-item">

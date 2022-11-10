@@ -2,14 +2,14 @@ import React from "react";
 import Button from "./Button";
 import { Box, TextField } from "@mui/material";
 
-const Forms = (props) => {
+const Forms = ({title,setEmail,setPassword,handleAction}) => {
   return (
     <>
       <div className="forms">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 m-auto border p-4 mt-5">
-              <h1>{props.title} Form</h1>
+              <h1>{title} Form</h1>
               <Box
         component="form"
         sx={{
@@ -22,7 +22,7 @@ const Forms = (props) => {
           id="email"
           label="Email"
           type="email"
-          
+          onChange={e => setEmail(e.target.value)}
           variant="outlined"
         />
         <TextField
@@ -30,10 +30,11 @@ const Forms = (props) => {
           label="Password"
           type="password"
           variant="outlined"
-         
+         onChange={e => setPassword(e.target.value)}
         />
         <br />
-        <Button title={props.title} />
+        <Button title={title}
+        handleAction={handleAction} />
         </Box>
               
             </div>

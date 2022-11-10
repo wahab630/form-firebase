@@ -1,10 +1,10 @@
 import React from 'react'
 import { Button as MButton } from "@mui/material";
 
-const Button = (props) => {
+const Button = ({title,handleAction}) => {
   return (
-    <MButton variant="contained" >
-       {props.title}
+    <MButton variant="contained" onClick={handleAction} >
+       {title}
     </MButton>
   )
 }
