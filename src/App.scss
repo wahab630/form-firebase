@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+// --------------------------------------------- Header-------------------------
+.navbar{
+    background-color: #12436b;
+    padding-top: 20px;
+    padding-bottom: 10px;
+     a{
+        font-size: 1rem;
+        text-transform: capitalize;
+        color: white;
+    }
+     a:active{
+        font-weight: bold;
+        border-bottom: 2px solid black;
+    }
+     a:hover{
+        color: blue;
+    }
+    .logo-img{
+        height: 30px;
+        width: 190px;
+    }
+}
+// -------------------------------------------------Footer-----------------------
+
+.footer{
+    background-color:#12436b ;
+    color: white;   
+    .footer-line{
+        border: 1px solid white ;
+        font-weight: bold;
+        color: white;
+    }
+    .footer-img{
+        height: 31px;
+        width: 200px;
+    }
+}
+//----------------------------------------------Forms------------------------------
+.forms{
+    height: 100vh;
+}
+
+
