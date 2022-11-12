@@ -37,7 +37,7 @@ function App() {
           toast.error('please check your password')
         }
         if(e.code== "auth/user-not-found"){
-          toast.error('please check your ')
+          toast.error('please check your email ')
         }
       });
       // .catch(e => {

@@ -4,7 +4,7 @@ import { getAuth, signOut } from "firebase/auth";
 const Signout = () => {
     const auth = getAuth();
 signOut(auth).then(() => {
-  // Sign-out successful.
+  console.log("success");
 }).catch((error) => {
   console.log("not found");
 });
