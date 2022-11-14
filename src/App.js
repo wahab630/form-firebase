@@ -31,7 +31,7 @@ function App() {
         navigate('/')
         addDoc(collection(db, "users"), {
           email, password
-        }).then(() => console.log('data saved'))//.catch(e => console.log('error while storing', e))
+        }).then(() => console.log('data saved'))//.catch(e => console.log('error while storing', e))//no need of  this anymore
       }).catch(e =>{
         if(e.code== "auth/wrong-password"){
           toast.error('please check your password')
