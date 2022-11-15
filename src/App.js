@@ -11,11 +11,14 @@ import {
   getAuth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  sendEmailVerification,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore"; 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Home from "./pages/Home";
+import ResetPassword from "./components/elements/ResetPassword";
 
 function App() {
   const navigate = useNavigate()
@@ -40,6 +43,11 @@ function App() {
           toast.error('please check your email ')
         }
       });
+      sendEmailVerification(authentication.currentUser)
+     .then(() => {
+     // Email verification sent!     
+     });
+
       // .catch(e => {
       //   alert('error')
       //   console.log(e)
@@ -68,6 +76,17 @@ function App() {
       
     }
   };
+  // const handleReset =()=>{
+  //   sendPasswordResetEmail(authentication, email)
+  //   .then(() => {
+  //     // Password reset email sent!
+  //     navigate("/resetpassword")      
+  //   })
+  //   .catch((error) => {
+  //     const errorCode = error.code;
+  //     const errorMessage = error.message;
+  //   });
+  // }
 
   return (
     <>
@@ -75,7 +94,8 @@ function App() {
         <Base>
         <ToastContainer />
           <Routes>
-            <Route index path='/' element={ <Home/>} />    
+            <Route index path='/' element={ <Home/>} />
+            <Route path='/resetpassword' element={ <ResetPassword/>} />    
             <Route
               path="/login"
               element={
@@ -84,6 +104,8 @@ function App() {
                   setPassword={setPassword}
                   handleAction={() => handleAction(1)}
                   title="Login"
+                  // titleTwo="Reset password"
+                  // handleReset={handleReset}
                 />
               }
             ></Route>

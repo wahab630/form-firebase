@@ -34,8 +34,8 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="" className="nav-link ">
-                  Platform
+                <Link to="/resetpassword" className="nav-link ">
+                 Resetpassword
                 </Link>
               </li>
               <li className="nav-item">

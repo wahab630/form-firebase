@@ -34,6 +34,7 @@ const Forms = ({ title, setEmail, setPassword, handleAction }) => {
                 />
                 <br />
                 <Button title={title} handleAction={handleAction} />
+                {/* <Button title={ titleTwo} handleReset={handleReset} /> */}
               </Box>
             </div>
           </div>
