@@ -1,8 +1,9 @@
 import React from "react";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 import { Box, TextField } from "@mui/material";
 
-const Forms = ({ title, setEmail, setPassword, handleAction , titleTwo,handleReset}) => {
+const Forms = ({ title, setEmail, setPassword, handleAction }) => {
   return (
     <>
       <div className="forms">
@@ -34,7 +35,9 @@ const Forms = ({ title, setEmail, setPassword, handleAction , titleTwo,handleRes
                 />
                 <br />
                 <Button title={title} handleAction={handleAction} />
-                <Button title={ titleTwo} handleReset={handleReset} />
+               <button className="btn "> <Link to="/resetpassword" className="nav-link ">
+                 Reset Password
+                </Link></button>
               </Box>
             </div>
           </div>
