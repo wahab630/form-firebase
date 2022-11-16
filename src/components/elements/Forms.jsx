@@ -2,7 +2,7 @@ import React from "react";
 import Button from "./Button";
 import { Box, TextField } from "@mui/material";
 
-const Forms = ({ title, setEmail, setPassword, handleAction }) => {
+const Forms = ({ title, setEmail, setPassword, handleAction , titleTwo,handleReset}) => {
   return (
     <>
       <div className="forms">
@@ -34,7 +34,7 @@ const Forms = ({ title, setEmail, setPassword, handleAction }) => {
                 />
                 <br />
                 <Button title={title} handleAction={handleAction} />
-                {/* <Button title={ titleTwo} handleReset={handleReset} /> */}
+                <Button title={ titleTwo} handleReset={handleReset} />
               </Box>
             </div>
           </div>

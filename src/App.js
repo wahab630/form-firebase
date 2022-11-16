@@ -4,7 +4,6 @@ import "./App.scss";
 import {  Routes, Route, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Base from "./components/layouts/Base";
-// import Home from './pages/Home';
 import Forms from "./components/elements/Forms";
 import { app, db } from "./Firebase";
 import {
@@ -17,8 +16,9 @@ import {
 import { collection, addDoc } from "firebase/firestore"; 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Home from "./pages/Home";
-import ResetPassword from "./components/elements/ResetPassword";
+import Home from "./pages/Home";  
+
+import Resetpass from "./components/elements/Resetpass";
 
 function App() {
   const navigate = useNavigate()
@@ -76,17 +76,16 @@ function App() {
       
     }
   };
-  // const handleReset =()=>{
-  //   sendPasswordResetEmail(authentication, email)
-  //   .then(() => {
-  //     // Password reset email sent!
-  //     navigate("/resetpassword")      
-  //   })
-  //   .catch((error) => {
-  //     const errorCode = error.code;
-  //     const errorMessage = error.message;
-  //   });
-  // }
+  const resetAction=()=>{
+    const auth = getAuth();
+sendPasswordResetEmail(auth, email)
+  .then(() => {
+    console.log('click for ')
+  })
+  .catch((error) => {
+    console.log(error)
+  });
+  }
 
   return (
     <>
@@ -95,7 +94,15 @@ function App() {
         <ToastContainer />
           <Routes>
             <Route index path='/' element={ <Home/>} />
-            <Route path='/resetpassword' element={ <ResetPassword/>} />    
+            <Route
+            path="/resetpassword"
+            element={
+            <Resetpass
+            resetAction={() => resetAction()}
+            setEmail={setEmail}
+            />
+          }
+        />
             <Route
               path="/login"
               element={
@@ -104,8 +111,8 @@ function App() {
                   setPassword={setPassword}
                   handleAction={() => handleAction(1)}
                   title="Login"
-                  // titleTwo="Reset password"
-                  // handleReset={handleReset}
+                  titleTwo="Reset Password"
+                  
                 />
               }
             ></Route>
