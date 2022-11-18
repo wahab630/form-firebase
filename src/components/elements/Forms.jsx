@@ -9,8 +9,11 @@ const Forms = ({ title, setEmail, setPassword, handleAction }) => {
       <div className="forms">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6 m-auto border p-4 mt-5">
-              <h1>{title} Form</h1>
+            <div className="col-lg-6">
+              <img src="./assets/login page.jpg" alt="no" className=" img-fluid" />
+            </div>
+            <div className="col-lg-6   p-4  form-cards text-center ">
+              <h1 className=" fw-bold">{title} Form</h1>
               <Box
                 component="form"
                 sx={{
@@ -24,18 +27,21 @@ const Forms = ({ title, setEmail, setPassword, handleAction }) => {
                   label="Email"
                   type="email"
                   onChange={(e) => setEmail(e.target.value)}
-                  variant="outlined"
+                  variant="standard"
                 />
+                <br />
                 <TextField
                   id="password"
                   label="Password"
                   type="password"
-                  variant="outlined"
+                  variant="standard"
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <br />
-                <Button title={title} handleAction={handleAction} />
-               <button className="btn "> <Link to="/resetpassword" className="nav-link ">
+                
+                <Button title={title} handleAction={handleAction} className="w-50" />
+                <br />
+                <button className="btn w-50"> <Link to="/resetpassword" className="nav-link ">
                  Reset Password
                 </Link></button>
               </Box>

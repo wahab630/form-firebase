@@ -3,7 +3,6 @@ import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import "./App.scss";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Base from "./components/layouts/Base";
 import Forms from "./components/elements/Forms";
 import { app, db } from "./Firebase";
 import {
@@ -17,8 +16,11 @@ import { collection, addDoc } from "firebase/firestore";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Home from "./pages/Home";
-
 import Resetpass from "./components/elements/Resetpass";
+import Hero from "./components/elements/Hero";
+import Header from "./components/layouts/Header";
+import Edit  from "./components/elements/Edit";
+import UploadFile from "./components/elements/UploadFile";
 
 function App() {
   const navigate = useNavigate();
@@ -89,7 +91,7 @@ function App() {
   return (
     <>
       <>
-        <Base>
+        <Header/>
           <ToastContainer />
           <Routes>
             <Route index path="/" element={<Home />} />
@@ -124,8 +126,12 @@ function App() {
                 />
               }
             ></Route>
+            <Route path="/hero" element={<Hero/>}/>
+            <Route path="/uploadfile" element={<UploadFile/>}/>
+            <Route path="/edit/:id" element={<Edit/>}/>
+            {/* taka id bhi pass ho edit page ki */}
           </Routes>
-        </Base>
+       
       </>
     </>
   );

@@ -6,8 +6,8 @@ function Resetpass({setEmail, resetAction}) {
          <div className="loginform">
         <div className="container">
           <div className="row">
-            <div className="col-md-5 mx-auto my-5">
-              <div className="card px-5 py-3 ">
+            <div className="col-md-5 mx-auto my-5 ">
+              <div className="card px-5 py-3 shadow">
                 <div className="login">
                   <div>
                     <div></div>
